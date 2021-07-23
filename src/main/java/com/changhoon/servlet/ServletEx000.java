@@ -15,7 +15,7 @@ public class ServletEx000 extends HttpServlet {
 	
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		response.setContentType("text/html");
+		response.setContentType("application/json");
 		response.setCharacterEncoding("utf-8");
 		
 		String id = request.getParameter("user_id");
@@ -24,8 +24,13 @@ public class ServletEx000 extends HttpServlet {
 		
 		PrintWriter out = response.getWriter();
 		
-		out.println("<html><head><title>get 파라미터 확인</title></head>");
-		out.println("<body><h3> " + id + " : " + name + "</h3></body></html>");
+//		out.println("<html><head><title>get 파라미터 확인</title></head>");
+//		out.println("<body><h3>" + id + " : " + name + " : " + age + "</h3></body></html>");
+		
+		// ?user_id=hagulu&name=임창훈&age=25
+		//
+		// {"user_id":"hagulu", "name":"임창훈", "age":25}
+		out.println("{\"user_id\":\"" + id + "\", \"name\":\"" + name +"\", \"age\":" + age + "}");
 		
 	}
 
