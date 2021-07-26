@@ -33,8 +33,9 @@ public class ServletEx08 extends HttpServlet {
 		out.println("<html><head><title>searching</title></head><body>");
 		for(int i = 0; i < list.size(); i++) {
 			if(list.get(i).contains(searching)) {
-				String[] results = list.get(i).split(searching);
-				out.println(results[0] + "<b>" + searching + "</b>" + results[1] +"<hr>");
+				String text = list.get(i);
+				text = text.replace(searching, "<b>" + searching + "</b>");
+				out.println(text +"<hr>");
 			}
 		}
 		out.println("</body></html>");
