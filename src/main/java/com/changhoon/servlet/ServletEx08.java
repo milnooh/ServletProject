@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.annotation.WebServlet;
@@ -22,7 +23,7 @@ public class ServletEx08 extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
 		List<String> list = new ArrayList<>(Arrays.asList(
-		        "강남역 최고 맛집 소개 합니다.", 
+		        "강남역 최고 맛집 소개 합니다.",
 		        "오늘 기분 좋은 일이 있었네요.", 
 		        "역시 맛집 데이트가 제일 좋네요.", 
 		        "집에 가는 길에 동네 맛집 가서 안주 사갑니다.",
@@ -31,13 +32,23 @@ public class ServletEx08 extends HttpServlet {
 		String searching = request.getParameter("searching");
 		
 		out.println("<html><head><title>searching</title></head><body>");
-		for(int i = 0; i < list.size(); i++) {
-			if(list.get(i).contains(searching)) {
-				String text = list.get(i);
-				text = text.replace(searching, "<b>" + searching + "</b>");
-				out.println(text +"<hr>");
+//		for(int i = 0; i < list.size(); i++) {
+//			if(list.get(i).contains(searching)) {
+//				String text = list.get(i);
+//				text = text.replace(searching, "<b>" + searching + "</b>");
+//				out.println(text +"<hr>");
+//			}
+//		}
+		Iterator<String> iter = list.iterator();
+		while(iter.hasNext()) {
+			String string = iter.next();
+			
+			if(string.contains(searching)) {
+				string = string.replace(searching, "<b>" + searching + "</b>");
+				out.println(string +"<hr>");
 			}
 		}
+		
 		out.println("</body></html>");
 
 	}
