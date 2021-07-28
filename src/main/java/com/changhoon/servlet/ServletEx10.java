@@ -36,9 +36,9 @@ public class ServletEx10 extends HttpServlet {
 		String userName = userMap.get("name");
 		
 		out.println("<html><head><title>Post Method2</title></head><body>");
-		if(id.contains(userId) == false) {
+		if(id.equals(userId) == false) {
 			out.println("id가 일치하지 않습니다.");
-		} else if(password.contains(userPassword) == false) {
+		} else if(password.equals(userPassword) == false) {
 			out.println("password가 일치하지 않습니다.");
 		} else {
 			out.println(userName + "님 환영합니다.");
