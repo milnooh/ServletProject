@@ -7,8 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>현재 날짜 <%=request.getParameter("year") %>년 
-	<%=request.getParameter("month") %>월 
-	<%=request.getParameter("day") %>일</h1>
+
+<h1>체격 조건 입력</h1>
+	<form method="get" action="/jsp/test03_2.jsp">
+		<input type="text" name="height">cm 
+		<input type="text" name="Weight">kg 
+		<button type="submit">계산</button>
+	</form>
+
 </body>
 </html>

@@ -2,6 +2,8 @@ package com.changhoon.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,6 +21,7 @@ public class ServletEx10 extends HttpServlet {
 	        put("password", "asdf");
 	        put("name", "김인규");
 	    }
+
 	};
 	
 	@Override

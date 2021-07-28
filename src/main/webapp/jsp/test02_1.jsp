@@ -15,25 +15,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-		SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy:MM:dd");
-		Date today = new Date();
-		
-		String time = timeFormat.format(today);
-		String date = dateFormat.format(today);
-		
-		String[] times = time.split(":");
-		String[] dates = date.split(":");
-	%>
-
 	<h1>날짜, 시간 링크</h1>
 	<div class="d-flex">
 		<div>
-			<a href="/jsp/test02_2.jsp?hour=<%=times[0]%>&minute=<%=times[1]%>&second=<%=times[2]%>"><button class="btn btn-primary">현재 시간 확인</button></a>
+			<a href="/jsp/test02_2.jsp?link=time>"><button class="btn btn-primary">현재 시간 확인</button></a>
 		</div>	
 		<div>
-			<a href="/jsp/test02_3.jsp?year=<%=dates[0]%>&month=<%=dates[1]%>&day=<%=dates[2]%>"><button class="btn btn-success">현재 날짜 확인</button></a>
+			<a href="/jsp/test02_2.jsp?link=date"><button class="btn btn-success">현재 날짜 확인</button></a>
 		</div>
 	</div>
 
