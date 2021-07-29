@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
-<%@ page import="java.text.SimpleDateFormat" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,15 +14,28 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>날짜, 시간 링크</h1>
-	<div class="d-flex">
-		<div>
-			<a href="/jsp/test02_2.jsp?link=time"><button class="btn btn-primary">현재 시간 확인</button></a>
-		</div>	
-		<div>
-			<a href="/jsp/test02_2.jsp?link=date"><button class="btn btn-success">현재 날짜 확인</button></a>
-		</div>
-	</div>
-
+	<%
+		String numberString1 = request.getParameter("number1");
+		String numberString2 = request.getParameter("number2");
+		String select = request.getParameter("select");	
+		
+		int number1 = Integer.parseInt(numberString1);
+		int number2 = Integer.parseInt(numberString2);
+		
+		double number = 0;
+		
+		if(select.equals("+")) {
+			number = number1 + number2;
+		} else if(select.equals("-")) {
+			number = number1 - number2;
+		} else if(select.equals("X")) {
+			number = number1 * number2;
+		} else if(select.equals("/")) {
+			number = number1 / (double)number2;
+		}
+	%>
+	
+	<h3>계산 결과</h3>
+	<h1><%=number1 %> <%=select %> <%=number2 %> = <span class="text-info"><%=number %></span></h1>
 </body>
 </html>

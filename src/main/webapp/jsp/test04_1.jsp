@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="java.util.*" %>
-<%@ page import="java.text.SimpleDateFormat" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,18 +10,20 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<title>Insert title here</title>
+<title>test04</title>
 </head>
 <body>
-	<h1>날짜, 시간 링크</h1>
-	<div class="d-flex">
-		<div>
-			<a href="/jsp/test02_2.jsp?link=time"><button class="btn btn-primary">현재 시간 확인</button></a>
-		</div>	
-		<div>
-			<a href="/jsp/test02_2.jsp?link=date"><button class="btn btn-success">현재 날짜 확인</button></a>
-		</div>
-	</div>
-
+	<h1>사칙연산</h1>
+	<form method="post" action="/jsp/test04_2.jsp">
+		<input type="text" name="number1">
+		<select name="select">
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="X">X</option>
+			<option value="/">/</option>
+		</select>
+		<input type="text" name="number2">	
+		<button type="submit" class="btn btn-success">계산</button>
+	</form>
 </body>
 </html>
