@@ -14,6 +14,7 @@
 	
 	String result = "";
 	
+	/*
 	for(int i = 0; i < transeformArray.length; i++) {
 		if(transeformArray[i].equals("inch")) {
 			result += (number * 0.39) + "in<br>";
@@ -25,13 +26,43 @@
 			result += (number * 0.01) + "m<br>";
 		}
 	}
-	
+	*/
+		
 	%>
+
+	
 	<h2>변환 결과</h2>
 	<b><%=number %>cm</b>
 	<hr>
-	<b><%=result %></b>
-	
+		<%
+		for(String transeform:transeformArray) {
+			if(transeform.equals("inch")) {
+				double inch = number * 0.39;
+				%>
+				<b><%=inch %> inch<br></b>
+				<%	
+				continue;
+			} else if(transeform.equals("yard")) {
+				double yard = number * 0.01;
+				%>
+				<b><%=yard %> inch<br></b>
+				<%	
+				continue;			
+			} else if(transeform.equals("feet")) {
+				double feet = number * 0.032;
+				%>
+				<b><%=feet %> inch<br></b>
+				<%	
+				continue;
+			} else if(transeform.equals("meter")) {
+				double meter = number * 0.01;
+				%>
+				<b><%=meter %> inch<br></b>
+				<%	
+				continue;
+			}
+		}
+	 %>
 	
 	
 </body>
