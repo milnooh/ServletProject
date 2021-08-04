@@ -18,7 +18,7 @@
 <%
 	Calendar today = Calendar.getInstance(); 
 	SimpleDateFormat formatter = new SimpleDateFormat("yyyy년 M월 d일");
-
+	today.add(today.DATE, 99);
 %>
 <h3>오늘부터 1일</h3>
 
