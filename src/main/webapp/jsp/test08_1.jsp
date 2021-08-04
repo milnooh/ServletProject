@@ -74,18 +74,15 @@ list.add(map);
 			</thead>
 			<tbody>
 			<%					
-				for(Map<String, Object> info : list) {
+				for(Map<String, Object> item : list) {
 				%>
 					<tr>
-						<td><%=info.get("id") %></td>
-						<td><img src=<%=info.get("image") %> width="110" height="160"></td>
-						<td><a href="/jsp/test08_2.jsp?image=<%=info.get("image") %>&
-						title=<%=info.get("title") %>&
-						author=<%=info.get("author") %>&
-						publisher=<%=info.get("publisher") %>">
-						<%=info.get("title") %></td></a>
+						<td><%=item.get("id") %></td>
+						<td><img src=<%=item.get("image") %> width="110"></td>
+						<td><a href="/jsp/test08_2.jsp?id=<%=item.get("id") %>">
+						<%=item.get("title") %></td></a>
 					</tr>						
-					<%										
+					<%
 				} %>
 			</tbody>
 		</table>
