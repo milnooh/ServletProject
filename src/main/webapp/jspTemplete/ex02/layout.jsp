@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="java.util.*" %>
-<%@ page import="java.text.SimpleDateFormat" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,48 +13,21 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-Calendar cal = Calendar.getInstance();
 
-cal.set(2021,7,1);
-
-int maxday = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
-
-int dayOfWeek = cal.get(Calendar.DAY_OF_WEEK);
-
-String korDayOfWeek = "";
-switch (dayOfWeek) {
-case 1:
-	korDayOfWeek = "일";
-	break;
-case 2:
-	korDayOfWeek = "월";
-	break;
-case 3:
-	korDayOfWeek = "화";
-	break;
-case 4:
-	korDayOfWeek = "수";
-	break;
-case 5:
-	korDayOfWeek = "목";
-	break;
-case 6:
-	korDayOfWeek = "금";
-	break;
-case 7:
-	korDayOfWeek = "토";
-	break;
-
-}
-out.println(korDayOfWeek);
-
-for(int i = 0; i < maxday; i++) {
+<div class="container">
+	<jsp:include page="header.jsp" />
+	<jsp:include page="menu.jsp" />
 	
-}
+	<section>
+		<img width="500" alt="풍경사진" src="https://cdn.pixabay.com/photo/2019/06/12/21/10/ocean-4270251_960_720.jpg">
+		<div>
+			예쁜 풍경!
+		</div>
+	</section>
+	
+	<jsp:include page="footer.jsp" />
+</div>
 
-
-%>
 
 </body>
 </html>

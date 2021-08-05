@@ -20,21 +20,23 @@
 	SimpleDateFormat formatter = new SimpleDateFormat("yyyy년 M월 d일");
 	today.add(today.DATE, 99);
 %>
-<h3>오늘부터 1일</h3>
-
-<%
-
-for(int i = 100; i <= 1000; i += 100){
-	%>
-	<h1>
-	<%=i %>일:
-	<span class="text-danger"><%=formatter.format(today.getTime()) %></span>
-	</h1>
+<div class="container">
+	<h3>오늘부터 1일</h3>
 	
 	<%
-	today.add(today.DATE, 100);
-}
-%>
+	
+	for(int i = 100; i <= 1000; i += 100){
+		%>
+		<h1>
+		<%=i %>일:
+		<span class="text-danger"><%=formatter.format(today.getTime()) %></span>
+		</h1>
+		
+		<%
+		today.add(today.DATE, 100);
+	}
+	%>
+</div>
 
 
 
