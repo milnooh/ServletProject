@@ -61,9 +61,9 @@
 							</tr>
 							<%							
 						}
-					} else if(category != null) {
+					} else {
 						for(Map<String, String> item : list){
-							if(category.equals(item.get(category))) {
+							if(category.equals(item.get("category"))) {
 								%>
 								<tr>							
 									<td><%=item.get("ch") %></td>
