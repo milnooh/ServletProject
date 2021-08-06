@@ -1,0 +1,31 @@
+#wrap {
+	width: 1200px;
+}
+
+
+header {
+	width: 1200px;
+	height: 50px;
+}
+.logo {
+	width: 100px;
+	line-height: 50px;
+	font-size: 20px;
+	background-color: red;
+}
+.search {
+	width: 500px;
+	vertical-align: middle;
+}
+
+nav {
+	height: 80px;
+}
+
+.content1 {
+	height: 200px;
+	border:2px solid green;
+}
+.content2 {
+	height: 200px;
+}

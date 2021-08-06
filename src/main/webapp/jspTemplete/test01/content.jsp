@@ -42,39 +42,27 @@
 %>
 
 <section class="content">
-			<table class="table text-center">
-				<thead>
-					<th>채널</th>
-					<th>채널명</th>
-					<th>카테고리</th>
-				</thead>
-				<tbody>
-					<%
-					String category = request.getParameter("category");					
-					if(category == null) {
-						for(Map<String, String> item : list){
-							%>
-							<tr>							
-								<td><%=item.get("ch") %></td>
-								<td><%=item.get("name") %></td>
-								<td><%=item.get("category") %></td>
-							</tr>
-							<%							
-						}
-					} else {
-						for(Map<String, String> item : list){
-							if(category.equals(item.get("category"))) {
-								%>
-								<tr>							
-									<td><%=item.get("ch") %></td>
-									<td><%=item.get("name") %></td>
-									<td><%=item.get("category") %></td>
-								</tr>
-								<%								
-							}
-						}
-					}
+	<table class="table text-center">
+		<thead>
+			<th>채널</th>
+			<th>채널명</th>
+			<th>카테고리</th>
+		</thead>
+		<tbody>
+			<%
+			String category = request.getParameter("category");	
+			for(Map<String, String> item : list){
+				if(category == null || category.equals(item.get("category"))) {
 					%>
-				</tbody>
-			</table>			
+					<tr>							
+						<td><%=item.get("ch") %></td>
+						<td><%=item.get("name") %></td>
+						<td><%=item.get("category") %></td>
+					</tr>
+					<%
+				}
+			}
+			%>
+		</tbody>
+	</table>			
 </section>
